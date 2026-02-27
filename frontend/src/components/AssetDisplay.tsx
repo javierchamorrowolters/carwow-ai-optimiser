@@ -14,17 +14,18 @@ function CharBadge({ count, max }: { count: number; max: number }) {
 function ImageAsset({ asset }: { asset: AssetData }) {
   const urls = asset.urls || [];
   const labels = ['1:1 Square', '4:5 Portrait', '9:16 Story'];
+  const aspects = ['aspect-square', 'aspect-[4/5]', 'aspect-[9/16]'];
 
   if (urls.length === 0) {
     return <div className="text-white/40 text-sm">No images generated</div>;
   }
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-4 items-end">
       {urls.map((url, i) => (
         <div key={i} className="space-y-2">
           <div className="text-xs text-white/40 text-center">{labels[i] || `Variant ${i + 1}`}</div>
-          <div className="relative bg-white/5 rounded-xl overflow-hidden aspect-square border border-white/10">
+          <div className={`relative bg-white/5 rounded-xl overflow-hidden ${aspects[i] ?? 'aspect-square'} border border-white/10`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={url}
