@@ -241,9 +241,9 @@ const IMAGE_ITERATION_1: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/peak-v1-square.jpg',
-      '/images/peak-v1-portrait.jpg',
-      '/images/peak-v1-story.jpg',
+      '/images/peak-v2-square.png',
+      '/images/peak-v2-portrait.png',
+      '/images/peak-v2-story.png',
     ],
   },
   focus_group: {
@@ -301,9 +301,9 @@ const IMAGE_ITERATION_3: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/peak-v3-square.jpg',
-      '/images/peak-v3-portrait.jpg',
-      '/images/peak-v3-story.jpg',
+      '/images/peak-v2-square.png',
+      '/images/peak-v2-portrait.png',
+      '/images/peak-v2-story.png',
     ],
   },
   focus_group: {
@@ -333,9 +333,9 @@ const YOUNG_IMAGE_ITERATION_1: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/young-v1-square.jpg',
-      '/images/young-v1-portrait.jpg',
-      '/images/young-v1-story.jpg',
+      '/images/young-v3-square.png',
+      '/images/young-v3-portrait.png',
+      '/images/young-v3-story.png',
     ],
   },
   focus_group: {
@@ -363,9 +363,9 @@ const YOUNG_IMAGE_ITERATION_2: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/young-v2-square.jpg',
-      '/images/young-v2-portrait.jpg',
-      '/images/young-v2-story.jpg',
+      '/images/young-v3-square.png',
+      '/images/young-v3-portrait.png',
+      '/images/young-v3-story.png',
     ],
   },
   focus_group: {
@@ -455,9 +455,9 @@ const OLDER_IMAGE_ITERATION_2: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/older-v2-square.jpg',
-      '/images/older-v2-portrait.jpg',
-      '/images/older-v2-story.jpg',
+      '/images/older-v1-square.png',
+      '/images/older-v1-portrait.png',
+      '/images/older-v1-story.png',
     ],
   },
   focus_group: {
@@ -485,9 +485,9 @@ const OLDER_IMAGE_ITERATION_3: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/older-v3-square.jpg',
-      '/images/older-v3-portrait.jpg',
-      '/images/older-v3-story.jpg',
+      '/images/older-v1-square.png',
+      '/images/older-v1-portrait.png',
+      '/images/older-v1-story.png',
     ],
   },
   focus_group: {
@@ -680,8 +680,8 @@ const LANDING_ITERATION_1: Iteration = {
 };
 
 const LANDING_ITERATION_2: Iteration = {
-  number: 2,
-  timestamp: '2026-02-27T09:09:00Z',
+  number: 1,
+  timestamp: '2026-02-27T09:00:00Z',
   asset: {
     type: 'landing_page',
     html_path: '/landing/ev-hub-v2.html',
@@ -707,8 +707,8 @@ const LANDING_ITERATION_2: Iteration = {
 };
 
 const LANDING_ITERATION_3: Iteration = {
-  number: 3,
-  timestamp: '2026-02-27T09:17:30Z',
+  number: 2,
+  timestamp: '2026-02-27T09:09:00Z',
   asset: {
     type: 'landing_page',
     html_path: '/landing/ev-hub-v3.html',
@@ -853,7 +853,7 @@ export const DEMO_CAMPAIGNS: DemoCampaign[] = [
     asset_type: 'landing_page',
     brief: 'High-converting landing page for Carwow\'s Electric Vehicle hub. Target: UK drivers 28–50, price-conscious, worried about range and charging. Goal: convert EV-curious visitors into comparison searches.',
     created_at: '2026-02-27T09:00:00Z',
-    iterations: [LANDING_ITERATION_1, LANDING_ITERATION_2, LANDING_ITERATION_3],
+    iterations: [LANDING_ITERATION_2, LANDING_ITERATION_3],
   },
   {
     id: 'demo-video',
