@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Iteration } from '@/data/mockData';
 import { AssetDisplay } from './AssetDisplay';
 import { FocusGroupSummary } from './FocusGroupSummary';
@@ -18,6 +19,7 @@ function ordinal(n: number) {
 }
 
 export function IterationCard({ iteration, isLatest, hasMore, onIterate }: IterationCardProps) {
+  const [feedback, setFeedback] = useState('');
   const timestamp = new Date(iteration.timestamp).toLocaleString('en-GB', {
     day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
   });
@@ -54,9 +56,21 @@ export function IterationCard({ iteration, isLatest, hasMore, onIterate }: Itera
         </div>
       )}
 
-      {/* Iterate button — only on latest iteration */}
+      {/* Feedback + iterate — only on latest iteration */}
       {isLatest && onIterate && hasMore && (
-        <div className="px-6 pb-6 pt-2">
+        <div className="px-6 pb-6 pt-2 space-y-3">
+          <div>
+            <label className="block text-xs text-white/30 uppercase tracking-wider mb-2">
+              Additional feedback for next iteration <span className="normal-case text-white/20">(optional)</span>
+            </label>
+            <textarea
+              value={feedback}
+              onChange={e => setFeedback(e.target.value)}
+              placeholder="e.g. Make the CTA more prominent, try a warmer colour palette, add a person in the foreground…"
+              rows={3}
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#1CDCEB]/50 transition-colors resize-none"
+            />
+          </div>
           <button
             onClick={onIterate}
             className="w-full py-3.5 border border-[#1CDCEB]/40 text-[#1CDCEB] font-semibold rounded-xl hover:bg-[#1CDCEB]/10 transition-all text-sm"

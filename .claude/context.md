@@ -1,57 +1,62 @@
 # Running Context — Hackathon Demo
 
 ## Last Updated
-2026-02-27 — display images split into 3 age-targeted campaigns; .gitignore created; build verified clean
+2026-02-27 — Campaign card flow + Video campaign + per-segment image naming
+
+## Live URL
+https://carwow-ai-optimiser.vercel.app
 
 ## Current Status
 - [x] Frontend-only Next.js demo created
-- [x] 4 demo campaigns → RSA Copy, 3×Display Images (by age), Landing Page
-- [x] Display Images split into 3 audience segments:
-  - `demo-images-young`  — Younger Driver (18-30) — 5 new panellists (Jake, Maya, Tom, Sofia, Callum)
-  - `demo-images-peak`   — EV Adoption Peak (35-54) — original 5 panellists
-  - `demo-images-older`  — Older Driver (60+) — 5 new panellists (David, Margaret, George, Helen, Peter)
-- [x] Full focus group mock data (5 panellists, scores, synthesis per iteration)
-- [x] Fake loading with step-by-step progress (8s create, 7s iterate)
-- [x] Landing page HTML rendered in iframe (all 3 iterations pre-built)
-- [x] .gitignore created at repo root
-- [x] 9 real EV images downloaded from Unsplash CDN (public/images/ev-display-v*-*.jpg)
-- [ ] Separate images per age segment (all 3 campaigns share same 9 images for now)
-- [ ] Video campaign assets (when user provides)
-- [x] Git init / GitHub push / Vercel deployment — COMPLETE
-  - GitHub: https://github.com/javierchamorrowolters/carwow-ai-optimiser
-  - Live URL: https://carwow-ai-optimiser.vercel.app (permanent alias)
-  - Auto-deploy: every `git push` to main triggers GitHub Actions → Vercel production
+- [x] 6 demo campaigns total:
+  - `demo-rsa`          — EV Switch — RSA Copy
+  - `demo-images-young` — EV Switch — Display Images — Younger Driver (18-30)
+  - `demo-images-peak`  — EV Switch — Display Images — EV Adoption Peak (35-54)
+  - `demo-images-older` — EV Switch — Display Images — Older Driver (60+)
+  - `demo-landing`      — EV Switch — Landing Page
+  - `demo-video`        — EV Switch — Video (NEW)
+- [x] Campaign cards → link to /campaign/new?demo=[id] (pre-filled form flow)
+- [x] New Campaign form: pre-fills name+brief from campaign, locks asset type, redirects to exact campaign
+- [x] + New button stays as blank form per section
+- [x] Per-segment image naming (27 image slots):
+  - Young: public/images/young-v[1-3]-[square|portrait|story].jpg
+  - Peak:  public/images/peak-v[1-3]-[square|portrait|story].jpg
+  - Older: public/images/older-v[1-3]-[square|portrait|story].jpg
+- [x] Video campaign: 3 iterations, native HTML5 <video> player
+  - Videos: public/videos/ev-video-v[1-3].mp4 (user to drop files here)
+- [x] Auto-deploy: push to main → GitHub Actions → Vercel (~70s)
+  - Fixed: was deploying to wrong project ("frontend") due to missing .vercel/project.json
+  - Now uses VERCEL_ORG_ID + VERCEL_PROJECT_ID secrets → pull→build→deploy pattern
 
-## Campaign IDs
-| ID                  | Name                                              | Redirect from "New" |
-|---------------------|---------------
-------------------------------------|---------------------|
-| demo-rsa            | EV Switch — RSA Copy                              | ✓ (rsa_copy type)   |
-| demo-images-young   | EV Switch — Display Images — Younger Driver       |                     |
-| demo-images-peak    | EV Switch — Display Images — EV Adoption Peak     | ✓ (image type)      |
-| demo-images-older   | EV Switch — Display Images — Older Driver         |                     |
-| demo-landing        | EV Switch — Landing Page                          | ✓ (landing_page)    |
+## Demo Flow (per campaign)
+1. Dashboard: click campaign card → goes to New Campaign form (pre-filled)
+2. User sees brief, hits "Create Campaign & Generate →"
+3. 8s fake loading (step-by-step progress)
+4. Redirects to correct campaign page → iteration 1 shown
+5. "Run Focus Group & Iterate" → 7s loading → iteration 2
+6. Repeat → iteration 3 → "All complete"
 
-## How to Run
-```bash
-cd "/Users/javierchamorro/Random Projects/hackathon-demo/frontend"
-npm run dev
-```
-Open: http://localhost:3000
+## Image Files to Drop
+Place these files in `frontend/public/images/`:
+- young-v1-square.jpg, young-v1-portrait.jpg, young-v1-story.jpg
+- young-v2-square.jpg, young-v2-portrait.jpg, young-v2-story.jpg
+- young-v3-square.jpg, young-v3-portrait.jpg, young-v3-story.jpg
+- peak-v1-square.jpg, peak-v1-portrait.jpg, peak-v1-story.jpg
+- peak-v2-square.jpg, peak-v2-portrait.jpg, peak-v2-story.jpg
+- peak-v3-square.jpg, peak-v3-portrait.jpg, peak-v3-story.jpg
+- older-v1-square.jpg, older-v1-portrait.jpg, older-v1-story.jpg
+- older-v2-square.jpg, older-v2-portrait.jpg, older-v2-story.jpg
+- older-v3-square.jpg, older-v3-portrait.jpg, older-v3-story.jpg
 
-## Vercel Deployment Steps (TODO for user)
-1. `git init && git add . && git commit -m "Initial commit"` in repo root
-2. Push to GitHub: create new repo, then `git remote add origin <url> && git push -u origin main`
-3. Go to vercel.com → New Project → Import GitHub repo
-4. **Set Root Directory to `frontend`** (critical — Next.js app is in subdirectory)
-5. Leave all other settings as default → Deploy
-6. Every `git push` to main auto-deploys
+## Video Files to Drop
+Place these files in `frontend/public/videos/`:
+- ev-video-v1.mp4
+- ev-video-v2.mp4
+- ev-video-v3.mp4
 
-## Demo Script (for presentation)
-1. Open dashboard — show 5 pre-built campaigns (3 image variants visible in Display Images section)
-2. Click "+ New" → fill in brief → submit → watch 8s loading steps
-3. Redirect to campaign page → iteration 1 already done
-4. Click "Run Focus Group & Iterate" → watch 7s AI steps
-5. Iteration 2 appears with improved scores
-6. Iterate once more → iteration 3, score ~8.4-8.9
-7. "All iterations complete" state shown
+## Infrastructure
+- GitHub: https://github.com/javierchamorrowolters/carwow-ai-optimiser
+- Vercel project ID: prj_MzA0mzKPa4z4xBgemFjVkguW7eEh
+- Vercel team: javierchamu-gmailcoms-projects / team_nYtC9BOAvkXF9dwE0hByrM1o
+- Vercel token: stored in GitHub secret VERCEL_TOKEN and in Claude memory only
+- GitHub Actions secret: VERCEL_TOKEN (set)

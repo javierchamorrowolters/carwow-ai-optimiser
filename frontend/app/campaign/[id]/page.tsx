@@ -28,6 +28,7 @@ export default function CampaignPage({ params }: { params: Promise<{ id: string 
   const [revealed, setRevealed] = useState(1); // start with first iteration shown
   const [iterating, setIterating] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
+  const [briefExpanded, setBriefExpanded] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   // Scroll to bottom when new iteration revealed
@@ -88,10 +89,23 @@ export default function CampaignPage({ params }: { params: Promise<{ id: string 
             </div>
           </div>
         </div>
-        <div className="mt-3 p-3 bg-white/5 rounded-xl text-sm text-white/50 line-clamp-2">
-          <span className="text-white/30 text-xs uppercase tracking-wider mr-2">Brief</span>
-          {campaign.brief}
-        </div>
+        <button
+          onClick={() => setBriefExpanded(e => !e)}
+          className="mt-3 w-full text-left p-3 bg-white/5 hover:bg-white/[0.08] rounded-xl text-sm text-white/50 transition-colors group"
+        >
+          <div className="flex items-center justify-between gap-3">
+            <div className={briefExpanded ? '' : 'line-clamp-2'}>
+              <span className="text-white/30 text-xs uppercase tracking-wider mr-2">Brief</span>
+              {campaign.brief}
+            </div>
+            <svg
+              className={`w-3.5 h-3.5 flex-shrink-0 text-white/30 group-hover:text-white/50 transition-all ${briefExpanded ? 'rotate-90' : ''}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </button>
       </div>
 
       {/* Iterations */}
