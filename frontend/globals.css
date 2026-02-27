@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  /* Carwow brand colours */
+  --blue:              #1CDCEB;
+  --blue-dark:         #008E99;
+  --blue-extra-dark:   #045E69;
+  --blue-light:        #92FFFF;
+  --blue-extra-light:  #D7F6F8;
+
+  --green:             #38C698;
+  --green-dark:        #1E8766;
+  --green-extra-dark:  #124936;
+  --green-light:       #93FFE9;
+  --green-extra-light: #EBFFFC;
+
+  --red:               #E35932;
+  --yellow:            #FED605;
+  --orange:            #FF9801;
+
+  --black:    #444444;
+
+  /* UI tokens */
+  --primary:      #1CDCEB;
+  --primary-dark: #008E99;
+  --bg:           #0A0F1A;
+  --surface:      #111827;
+}
+
+body {
+  background-color: #0A0F1A;
+  color: #F0F4F8;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.score-bar {
+  transition: width 0.8s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(28, 220, 235, 0.25); }
+  50% { box-shadow: 0 0 40px rgba(28, 220, 235, 0.5); }
+}
+
+.thinking-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

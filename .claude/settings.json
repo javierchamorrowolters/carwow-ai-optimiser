@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm*)",
+      "Bash(npx*)",
+      "Bash(node*)",
+      "Bash(git*)",
+      "Bash(ls*)",
+      "Bash(cd *)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(mkdir*)",
+      "Bash(rm *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(touch *)",
+      "Bash(curl*)",
+      "Bash(which *)",
+      "Bash(brew*)",
+      "Bash(open *)",
+      "Bash(grep*)",
+      "Bash(find*)",
+      "Bash(sed*)",
+      "Bash(source *)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[HOOK] REMINDER: Update .claude/context.md before finishing — Rule #1'"
+          }
+        ]
+      }
+    ]
+  }
+}
