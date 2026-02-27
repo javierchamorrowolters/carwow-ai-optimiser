@@ -241,9 +241,9 @@ const IMAGE_ITERATION_1: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/peak-v2-square.png',
-      '/images/peak-v2-portrait.png',
-      '/images/peak-v2-story.png',
+      '/images/older-v1-square.png',
+      '/images/older-v1-portrait.png',
+      '/images/older-v1-story.png',
     ],
   },
   focus_group: {
@@ -301,9 +301,9 @@ const IMAGE_ITERATION_3: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/peak-v2-square.png',
-      '/images/peak-v2-portrait.png',
-      '/images/peak-v2-story.png',
+      '/images/young-v3-square.png',
+      '/images/young-v3-portrait.png',
+      '/images/young-v3-story.png',
     ],
   },
   focus_group: {
@@ -824,28 +824,12 @@ export const DEMO_CAMPAIGNS: DemoCampaign[] = [
     iterations: [RSA_ITERATION_1, RSA_ITERATION_2, RSA_ITERATION_3],
   },
   {
-    id: 'demo-images-young',
-    name: 'EV Switch — Display Images — Initial Cost Is Lower With Carwow',
+    id: 'demo-images',
+    name: 'EV Switch — Display Images',
     asset_type: 'image',
-    brief: 'Meta/Instagram display ad for Carwow\'s EV category. Target: first-time buyers and young professionals aged 18-30, driven by sustainability values, social status, and fuel cost savings. Highly active on Instagram and TikTok, respond to bold authentic visuals, peer-group imagery, and purposeful brand identity. Goal: drive traffic to Carwow EV comparison pages. Formats: 1:1 square, 4:5 portrait, 9:16 story.',
-    created_at: '2026-02-27T09:00:00Z',
-    iterations: [YOUNG_IMAGE_ITERATION_1, YOUNG_IMAGE_ITERATION_2, YOUNG_IMAGE_ITERATION_3],
-  },
-  {
-    id: 'demo-images-peak',
-    name: 'EV Switch — Display Images — The UK Now Has Over 86,000 Chargepoints',
-    asset_type: 'image',
-    brief: 'Meta/Instagram display ad for Carwow\'s EV category. Target: eco-conscious UK professionals 35–54 — the peak EV-switching demographic. Mix of family buyers, fleet managers, and established professionals with disposable income. Visual style: clean, modern, aspirational. Formats needed: 1:1 square, 4:5 portrait, 9:16 story.',
+    brief: 'Meta/Instagram display ad campaign for Carwow\'s EV category. Target: UK drivers (28–54) actively researching their next car — EV-curious but hesitant due to cost, range, and charging concerns. Goal: drive traffic to Carwow\'s EV comparison pages. USP: compare hundreds of EVs, real dealer prices, no haggling. Formats: 1:1 square, 4:5 portrait, 9:16 story.',
     created_at: '2026-02-27T09:00:00Z',
     iterations: [IMAGE_ITERATION_1, IMAGE_ITERATION_2, IMAGE_ITERATION_3],
-  },
-  {
-    id: 'demo-images-older',
-    name: 'EV Switch — Display Images — EVs On Average Have A Range Of 230 Miles',
-    asset_type: 'image',
-    brief: 'Meta/Facebook display ad for Carwow\'s EV category. Target: drivers aged 60+, primarily Facebook users, motivated by running cost savings, environmental legacy, and reliability. Key concerns: range anxiety, home charging complexity, technology unfamiliarity, and upfront cost vs. fixed income. Goal: demystify electric car ownership for an older demographic. Formats: 1:1 square, 4:5 portrait, 9:16 story.',
-    created_at: '2026-02-27T09:00:00Z',
-    iterations: [OLDER_IMAGE_ITERATION_1, OLDER_IMAGE_ITERATION_2, OLDER_IMAGE_ITERATION_3],
   },
   {
     id: 'demo-landing',
@@ -870,7 +854,7 @@ export const getDemoCampaign = (id: string) => DEMO_CAMPAIGNS.find(c => c.id ===
 // Map: any "new campaign" type → which demo campaign to redirect to
 export const DEMO_REDIRECT: Record<AssetType, string> = {
   rsa_copy: 'demo-rsa',
-  image: 'demo-images-peak',
+  image: 'demo-images',
   landing_page: 'demo-landing',
   video: 'demo-video',
 };

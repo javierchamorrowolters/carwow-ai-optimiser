@@ -11,35 +11,44 @@ function CharBadge({ count, max }: { count: number; max: number }) {
   );
 }
 
+const IMAGE_HEIGHT = 300;
+const IMAGE_RATIOS = [1 / 1, 4 / 5, 9 / 16];
+
 function ImageAsset({ asset }: { asset: AssetData }) {
   const urls = asset.urls || [];
   const labels = ['1:1 Square', '4:5 Portrait', '9:16 Story'];
-  const aspects = ['aspect-square', 'aspect-[4/5]', 'aspect-[9/16]'];
 
   if (urls.length === 0) {
     return <div className="text-white/40 text-sm">No images generated</div>;
   }
 
   return (
-    <div className="grid grid-cols-3 gap-4 items-end">
-      {urls.map((url, i) => (
-        <div key={i} className="space-y-2">
-          <div className="text-xs text-white/40 text-center">{labels[i] || `Variant ${i + 1}`}</div>
-          <div className={`relative bg-white/5 rounded-xl overflow-hidden ${aspects[i] ?? 'aspect-square'} border border-white/10`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={url}
-              alt={`Variant ${i + 1}`}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                const t = e.target as HTMLImageElement;
-                t.style.display = 'none';
-                t.parentElement!.innerHTML = `<div class="w-full h-full flex flex-col items-center justify-center text-white/20 text-xs gap-1"><span>🖼</span><span>${labels[i]}</span><span class="text-[10px]">Image placeholder</span></div>`;
-              }}
-            />
+    <div className="flex gap-4 items-end">
+      {urls.map((url, i) => {
+        const ratio = IMAGE_RATIOS[i] ?? 1;
+        const w = Math.round(IMAGE_HEIGHT * ratio);
+        return (
+          <div key={i} className="space-y-2">
+            <div className="text-xs text-white/40 text-center">{labels[i] || `Variant ${i + 1}`}</div>
+            <div
+              className="relative bg-white/5 rounded-xl overflow-hidden border border-white/10 flex-shrink-0"
+              style={{ height: `${IMAGE_HEIGHT}px`, width: `${w}px` }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={url}
+                alt={`Variant ${i + 1}`}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const t = e.target as HTMLImageElement;
+                  t.style.display = 'none';
+                  t.parentElement!.innerHTML = `<div class="w-full h-full flex flex-col items-center justify-center text-white/20 text-xs gap-1"><span>🖼</span><span>${labels[i]}</span><span class="text-[10px]">Image placeholder</span></div>`;
+                }}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
