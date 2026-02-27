@@ -1,7 +1,7 @@
 # Running Context — Hackathon Demo
 
 ## Last Updated
-2026-02-27 — Campaign card flow + Video campaign + per-segment image naming
+2026-02-27 — Expandable brief, feedback textarea, allow list expanded, token removed from context
 
 ## Live URL
 https://carwow-ai-optimiser.vercel.app

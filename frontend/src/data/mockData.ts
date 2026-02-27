@@ -271,9 +271,9 @@ const IMAGE_ITERATION_2: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/peak-v2-square.jpg',
-      '/images/peak-v2-portrait.jpg',
-      '/images/peak-v2-story.jpg',
+      '/images/peak-v2-square.png',
+      '/images/peak-v2-portrait.png',
+      '/images/peak-v2-story.png',
     ],
   },
   focus_group: {
@@ -393,9 +393,9 @@ const YOUNG_IMAGE_ITERATION_3: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/young-v3-square.jpg',
-      '/images/young-v3-portrait.jpg',
-      '/images/young-v3-story.jpg',
+      '/images/young-v3-square.png',
+      '/images/young-v3-portrait.png',
+      '/images/young-v3-story.png',
     ],
   },
   focus_group: {
@@ -425,9 +425,9 @@ const OLDER_IMAGE_ITERATION_1: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/older-v1-square.jpg',
-      '/images/older-v1-portrait.jpg',
-      '/images/older-v1-story.jpg',
+      '/images/older-v1-square.png',
+      '/images/older-v1-portrait.png',
+      '/images/older-v1-story.png',
     ],
   },
   focus_group: {
@@ -516,40 +516,51 @@ const LANDING_HTML_1 = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Switch to Electric | Carwow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: system-ui, sans-serif; background: #0A1628; color: #fff; }
-  nav { padding: 16px 32px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 12px; }
-  .logo { font-size: 20px; font-weight: 700; color: #00D4AA; }
-  .hero { padding: 80px 32px; max-width: 800px; margin: 0 auto; text-align: center; }
-  h1 { font-size: 40px; font-weight: 700; margin-bottom: 16px; }
-  .hero p { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
-  .cta { display: inline-block; background: #00D4AA; color: #0A1628; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; }
-  .features { padding: 64px 32px; max-width: 900px; margin: 0 auto; }
-  .features h2 { font-size: 28px; margin-bottom: 32px; text-align: center; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .card { padding: 24px; background: rgba(255,255,255,0.05); border-radius: 12px; }
-  .card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-  .card p { font-size: 14px; color: rgba(255,255,255,0.5); }
-  footer { padding: 32px; text-align: center; color: rgba(255,255,255,0.3); font-size: 14px; border-top: 1px solid rgba(255,255,255,0.1); }
+:root { --blue: #1edce8; --black: #171717; --cream: #f5f2ee; --text: #1a1a1a; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+nav { background: var(--black); height: 56px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: 'Oswald', sans-serif; font-size: 22px; color: #fff; text-transform: lowercase; letter-spacing: -0.5px; }
+.logo-dot { color: var(--blue); }
+.nav-cta { background: var(--blue); color: var(--black); padding: 8px 20px; border-radius: 6px; font-weight: 700; font-size: 14px; border: none; cursor: pointer; font-family: 'Inter', sans-serif; }
+.hero { background: var(--black); padding: 72px 32px 80px; text-align: center; }
+.hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(52px, 9vw, 96px); font-weight: 700; color: #fff; text-transform: uppercase; line-height: 0.93; letter-spacing: -1px; margin-bottom: 20px; }
+.hero h1 .cyan { color: var(--blue); }
+.hero-sub { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+.btn { display: inline-block; background: var(--blue); color: var(--black); padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; font-family: 'Inter', sans-serif; }
+.section { padding: 64px 32px; max-width: 920px; margin: 0 auto; }
+.section h2 { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; text-transform: uppercase; margin-bottom: 40px; text-align: center; color: var(--text); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card { background: #fff; border-radius: 12px; padding: 28px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.card-icon { font-size: 28px; margin-bottom: 12px; }
+.card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+.card p { font-size: 14px; color: #555; line-height: 1.6; }
+footer { background: var(--black); padding: 28px 32px; text-align: center; color: rgba(255,255,255,0.3); font-size: 13px; }
 </style>
 </head>
 <body>
-<nav><span class="logo">carwow</span></nav>
+<nav>
+  <span class="logo"><span class="logo-dot">⬡ </span>carwow</span>
+  <button class="nav-cta">Compare EVs →</button>
+</nav>
 <div class="hero">
-  <h1>Find Your Electric Car</h1>
-  <p>Compare electric vehicles from UK dealers. Get competitive prices without the hassle.</p>
-  <a href="#" class="cta">Compare EVs Now</a>
+  <h1>Find your<br/><span class="cyan">electric car.</span></h1>
+  <p class="hero-sub">Compare electric vehicles from UK dealers. Get real, competitive prices without the hassle.</p>
+  <a href="#" class="btn">Compare EVs Free →</a>
 </div>
-<div class="features">
+<div class="section">
   <h2>Why Carwow?</h2>
   <div class="grid">
-    <div class="card"><h3>Hundreds of EVs</h3><p>Browse electric cars from all major manufacturers in one place.</p></div>
-    <div class="card"><h3>Real Dealer Prices</h3><p>Get actual quotes from dealers. No made-up list prices.</p></div>
-    <div class="card"><h3>No Haggling</h3><p>Dealers compete for your business. You get the best price automatically.</p></div>
+    <div class="card"><div class="card-icon">⚡</div><h3>500+ EVs Listed</h3><p>Browse electric cars from all major UK manufacturers in one place. Find the right one for you.</p></div>
+    <div class="card"><div class="card-icon">💷</div><h3>Real Dealer Prices</h3><p>Get actual quotes from UK dealers competing for your business. No inflated list prices.</p></div>
+    <div class="card"><div class="card-icon">🤝</div><h3>No Haggling</h3><p>Dealers compete so you don't have to. You automatically get the best available price.</p></div>
   </div>
 </div>
-<footer><p>© 2026 Carwow. Trusted by millions of UK drivers.</p></footer>
+<footer>© 2026 Carwow Ltd · Privacy · Terms · Contact</footer>
 </body>
 </html>`;
 
@@ -558,229 +569,88 @@ const LANDING_HTML_2 = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Switch to Electric the Smart Way | Carwow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: system-ui, sans-serif; background: #0A1628; color: #fff; }
-  nav { padding: 16px 40px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-size: 22px; font-weight: 800; color: #00D4AA; }
-  .nav-cta { background: #00D4AA; color: #0A1628; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; border: none; }
-  .hero { padding: 100px 40px 80px; max-width: 900px; margin: 0 auto; }
-  .badge { display: inline-block; background: rgba(0,212,170,0.15); color: #00D4AA; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
-  h1 { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-  h1 span { color: #00D4AA; }
-  .hero-sub { font-size: 20px; color: rgba(255,255,255,0.6); margin-bottom: 36px; max-width: 600px; }
-  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn-primary { background: #00D4AA; color: #0A1628; padding: 18px 36px; border-radius: 10px; font-weight: 800; font-size: 16px; text-decoration: none; }
-  .btn-secondary { background: rgba(255,255,255,0.08); color: #fff; padding: 18px 36px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); }
-  .trust { display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap; }
-  .trust-item { font-size: 14px; color: rgba(255,255,255,0.5); }
-  .trust-item strong { color: #fff; display: block; font-size: 22px; font-weight: 800; }
-  .section { padding: 80px 40px; max-width: 1000px; margin: 0 auto; }
-  .section h2 { font-size: 36px; font-weight: 800; margin-bottom: 48px; text-align: center; }
-  .myths { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-  .myth { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; }
-  .myth .label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
-  .myth h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
-  .myth p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .step { text-align: center; padding: 32px 24px; }
-  .step-num { width: 48px; height: 48px; background: rgba(0,212,170,0.15); color: #00D4AA; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; margin: 0 auto 16px; }
-  .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-  .step p { font-size: 14px; color: rgba(255,255,255,0.5); }
-  .final-cta { background: linear-gradient(135deg, rgba(0,212,170,0.12), rgba(0,212,170,0.04)); border: 1px solid rgba(0,212,170,0.2); border-radius: 24px; padding: 64px 40px; text-align: center; margin: 0 40px 80px; }
-  .final-cta h2 { font-size: 40px; font-weight: 800; margin-bottom: 16px; }
-  .final-cta p { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
-  footer { padding: 32px 40px; text-align: center; color: rgba(255,255,255,0.3); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.08); }
+:root { --blue: #1edce8; --black: #171717; --cream: #f5f2ee; --text: #1a1a1a; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+nav { background: var(--black); height: 56px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+.logo { font-family: 'Oswald', sans-serif; font-size: 22px; color: #fff; text-transform: lowercase; letter-spacing: -0.5px; }
+.logo-dot { color: var(--blue); }
+.nav-cta { background: var(--blue); color: var(--black); padding: 8px 20px; border-radius: 6px; font-weight: 700; font-size: 14px; border: none; cursor: pointer; font-family: 'Inter', sans-serif; }
+.hero { background: var(--black); padding: 80px 32px 88px; text-align: center; }
+.badge { display: inline-block; background: rgba(30,220,232,0.15); color: var(--blue); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid rgba(30,220,232,0.25); }
+.hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(52px, 8.5vw, 96px); font-weight: 700; color: #fff; text-transform: uppercase; line-height: 0.93; letter-spacing: -1px; margin-bottom: 20px; }
+.hero h1 .cyan { color: var(--blue); }
+.hero-sub { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+.btn { display: inline-block; background: var(--blue); color: var(--black); padding: 18px 36px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; font-family: 'Inter', sans-serif; }
+.trust-bar { display: flex; justify-content: center; gap: 52px; margin-top: 48px; flex-wrap: wrap; }
+.trust-item strong { display: block; font-family: 'Oswald', sans-serif; font-size: 38px; font-weight: 700; color: var(--blue); line-height: 1; }
+.trust-item span { font-size: 13px; color: rgba(255,255,255,0.45); }
+.section { padding: 72px 32px; max-width: 960px; margin: 0 auto; }
+.section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--blue); text-transform: uppercase; margin-bottom: 12px; }
+.section h2 { font-family: 'Oswald', sans-serif; font-size: 40px; font-weight: 700; text-transform: uppercase; margin-bottom: 48px; }
+.myths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.myth { background: #fff; border-radius: 14px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.myth h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.myth p { font-size: 14px; color: #555; line-height: 1.65; }
+.myth .truth { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(30,220,232,0.25); font-size: 13px; color: #00737e; font-weight: 600; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.step { background: #fff; border-radius: 14px; padding: 28px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; }
+.step-num { width: 48px; height: 48px; background: rgba(30,220,232,0.12); color: #00737e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; margin: 0 auto 16px; }
+.step h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.step p { font-size: 14px; color: #555; line-height: 1.6; }
+.cta-section { background: var(--black); padding: 72px 32px; text-align: center; }
+.cta-section h2 { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700; color: #fff; text-transform: uppercase; margin-bottom: 16px; }
+.cta-section p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+footer { background: var(--black); padding: 24px 32px; text-align: center; color: rgba(255,255,255,0.3); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.08); }
 </style>
 </head>
 <body>
 <nav>
-  <span class="logo">carwow</span>
+  <span class="logo"><span class="logo-dot">⬡ </span>carwow</span>
   <button class="nav-cta">Compare EVs Free →</button>
 </nav>
 <div class="hero">
-  <div class="badge">⚡ Over 500 electric models to compare</div>
-  <h1>Switch to electric<br/><span>the smart way.</span></h1>
-  <p class="hero-sub">Compare hundreds of EVs from UK dealers. Real prices, no haggling, no guesswork.</p>
-  <div class="hero-cta">
-    <a href="#" class="btn-primary">Compare EVs Free →</a>
-    <a href="#" class="btn-secondary">How it works</a>
-  </div>
-  <div class="trust">
-    <div class="trust-item"><strong>10M+</strong>drivers trust Carwow</div>
-    <div class="trust-item"><strong>500+</strong>EV models listed</div>
-    <div class="trust-item"><strong>£2,400</strong>average saving</div>
-  </div>
-</div>
-<div class="section">
-  <h2>Busting the EV myths</h2>
-  <div class="myths">
-    <div class="myth"><div class="label">MYTH 01</div><h3>"EVs don't have enough range"</h3><p>Most modern EVs offer 200–350 miles of real-world range. The average UK driver does 20 miles a day. Carwow shows you real-world range data — not manufacturer claims.</p></div>
-    <div class="myth"><div class="label">MYTH 02</div><h3>"Charging is too inconvenient"</h3><p>70% of EV owners charge at home overnight. With a home charger installed, you wake up to a full battery every morning. Carwow's guide explains home charging in under 3 minutes.</p></div>
-    <div class="myth"><div class="label">MYTH 03</div><h3>"EVs cost too much"</h3><p>Factor in fuel, servicing and tax savings and many EVs cost less to run than equivalent petrol cars. Carwow shows total cost of ownership — not just sticker price.</p></div>
-  </div>
-</div>
-<div class="section">
-  <h2>How Carwow works</h2>
-  <div class="steps">
-    <div class="step"><div class="step-num">1</div><h3>Tell us what you want</h3><p>Set your budget, range needs and preferences. Takes 2 minutes.</p></div>
-    <div class="step"><div class="step-num">2</div><h3>Dealers compete for you</h3><p>UK dealers submit their best prices. You compare them side by side.</p></div>
-    <div class="step"><div class="step-num">3</div><h3>Choose with confidence</h3><p>Pick the deal that works for you. No haggling, no pressure.</p></div>
-  </div>
-</div>
-<div class="final-cta">
-  <h2>Ready to go electric?</h2>
-  <p>Join 10 million UK drivers who found their perfect car on Carwow.</p>
-  <a href="#" class="btn-primary">Compare EVs Free — No Commitment →</a>
-</div>
-<footer>© 2026 Carwow Ltd. All rights reserved.</footer>
-</body>
-</html>`;
-
-const LANDING_HTML_3 = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Switch to Electric the Smart Way | Carwow — Find, Compare & Save</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: system-ui, sans-serif; background: #0A1628; color: #fff; }
-  nav { padding: 16px 40px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: rgba(10,22,40,0.95); backdrop-filter: blur(12px); z-index: 10; }
-  .logo { font-size: 22px; font-weight: 800; color: #00D4AA; }
-  .nav-links { display: flex; gap: 24px; }
-  .nav-links a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; }
-  .nav-cta { background: #00D4AA; color: #0A1628; padding: 10px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; border: none; }
-  .hero { padding: 100px 40px 80px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .hero-left {}
-  .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,212,170,0.12); color: #00D4AA; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 28px; border: 1px solid rgba(0,212,170,0.2); }
-  h1 { font-size: 56px; font-weight: 900; line-height: 1.05; margin-bottom: 24px; }
-  h1 span { color: #00D4AA; }
-  .hero-sub { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 40px; line-height: 1.6; }
-  .hero-cta { display: flex; gap: 12px; margin-bottom: 48px; }
-  .btn-primary { background: #00D4AA; color: #0A1628; padding: 18px 32px; border-radius: 10px; font-weight: 800; font-size: 16px; text-decoration: none; white-space: nowrap; }
-  .btn-secondary { background: rgba(255,255,255,0.06); color: #fff; padding: 18px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); }
-  .trust { display: flex; gap: 32px; }
-  .trust-item { }
-  .trust-item strong { color: #00D4AA; display: block; font-size: 28px; font-weight: 900; }
-  .trust-item span { font-size: 13px; color: rgba(255,255,255,0.45); }
-  .hero-right { background: rgba(0,212,170,0.06); border: 1px solid rgba(0,212,170,0.15); border-radius: 24px; padding: 32px; }
-  .rating { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .stars { color: #FFD700; font-size: 20px; letter-spacing: 2px; }
-  .rating-text { font-size: 14px; color: rgba(255,255,255,0.6); }
-  .rating-text strong { color: #fff; }
-  .quote { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
-  .quote-author { font-size: 13px; color: rgba(255,255,255,0.4); }
-  .section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #00D4AA; text-transform: uppercase; margin-bottom: 16px; }
-  .section h2 { font-size: 40px; font-weight: 800; margin-bottom: 56px; }
-  .myths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .myth { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; padding: 32px; transition: border-color 0.2s; }
-  .myth:hover { border-color: rgba(0,212,170,0.3); }
-  .myth-icon { font-size: 28px; margin-bottom: 16px; }
-  .myth h3 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
-  .myth p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
-  .myth .truth { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(0,212,170,0.2); font-size: 13px; color: #00D4AA; font-weight: 600; }
-  .categories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .cat { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 24px; cursor: pointer; transition: all 0.2s; }
-  .cat:hover { background: rgba(0,212,170,0.06); border-color: rgba(0,212,170,0.2); }
-  .cat-icon { font-size: 32px; margin-bottom: 12px; }
-  .cat h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-  .cat p { font-size: 13px; color: rgba(255,255,255,0.45); }
-  .cat .count { margin-top: 16px; font-size: 13px; color: #00D4AA; font-weight: 600; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-  .step { text-align: center; }
-  .step-num { width: 56px; height: 56px; background: rgba(0,212,170,0.1); color: #00D4AA; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; margin: 0 auto 20px; border: 2px solid rgba(0,212,170,0.2); }
-  .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-  .step p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
-  .final-cta { background: linear-gradient(135deg, rgba(0,212,170,0.1), rgba(0,212,170,0.03)); border: 1px solid rgba(0,212,170,0.2); border-radius: 28px; padding: 80px 40px; text-align: center; margin: 0 40px 80px; }
-  .final-cta h2 { font-size: 48px; font-weight: 900; margin-bottom: 20px; }
-  .final-cta p { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
-  .final-sub { font-size: 14px; color: rgba(255,255,255,0.35) !important; }
-  .cta-group { display: flex; gap: 16px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-  footer { padding: 40px; border-top: 1px solid rgba(255,255,255,0.07); }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; }
-  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.25); }
-</style>
-</head>
-<body>
-<nav>
-  <span class="logo">carwow</span>
-  <div class="nav-links">
-    <a href="#">EVs</a><a href="#">Hybrids</a><a href="#">How it works</a><a href="#">Reviews</a>
-  </div>
-  <button class="nav-cta">Compare EVs Free →</button>
-</nav>
-<div class="hero">
-  <div class="hero-left">
-    <div class="badge">⚡ Trusted by 10 million UK drivers</div>
-    <h1>Switch to<br/>electric,<br/><span>the smart way.</span></h1>
-    <p class="hero-sub">Cut fuel bills by up to 70%. Compare 500+ EVs from UK dealers — real prices, no haggling, no guesswork.</p>
-    <div class="hero-cta">
-      <a href="#" class="btn-primary">Compare EVs Free →</a>
-      <a href="#" class="btn-secondary">See how it works</a>
-    </div>
-    <div class="trust">
-      <div class="trust-item"><strong>10M+</strong><span>UK drivers</span></div>
-      <div class="trust-item"><strong>500+</strong><span>EV models</span></div>
-      <div class="trust-item"><strong>£2,400</strong><span>avg. saving</span></div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="rating">
-      <div class="stars">★★★★★</div>
-      <div class="rating-text"><strong>4.8 / 5</strong> on Trustpilot · 63,000+ reviews</div>
-    </div>
-    <div class="quote">"I was nervous about going electric but Carwow made it so simple. I compared 12 different EVs, got real dealer prices, and saved £2,100 off my Model 3. Zero haggling."</div>
-    <div class="quote-author">— James T., London · Switched to Tesla Model 3</div>
+  <div class="badge">⚡ Trusted by 10 million UK drivers</div>
+  <h1>Switch to electric,<br/><span class="cyan">the smart way.</span></h1>
+  <p class="hero-sub">Cut your fuel bills by up to 70%. Compare 500+ EVs from UK dealers — real prices, no haggling, no guesswork.</p>
+  <a href="#" class="btn">Compare EVs Free →</a>
+  <div class="trust-bar">
+    <div class="trust-item"><strong>10M+</strong><span>UK drivers trust Carwow</span></div>
+    <div class="trust-item"><strong>500+</strong><span>EV models listed</span></div>
+    <div class="trust-item"><strong>£2,400</strong><span>average saving</span></div>
   </div>
 </div>
 <div class="section">
   <div class="section-label">Clearing up confusion</div>
   <h2>The EV myths, busted.</h2>
   <div class="myths">
-    <div class="myth"><div class="myth-icon">🔋</div><h3>"The range isn't enough"</h3><p>The average UK driver travels 20 miles a day. Most modern EVs offer 200–350 miles real-world range — that's weeks of commuting on a single charge.</p><div class="truth">✓ The Vauxhall Astra Electric does 258 miles. The Tesla Model Y does 331.</div></div>
-    <div class="myth"><div class="myth-icon">⚡</div><h3>"Charging is a nightmare"</h3><p>70% of EV owners charge at home overnight — like charging your phone. You start every morning with a full battery. No queues, no petrol stations.</p><div class="truth">✓ A home charger installs in 3 hours. Carwow guides you through the whole process.</div></div>
-    <div class="myth"><div class="myth-icon">💷</div><h3>"EVs are too expensive"</h3><p>Factor in fuel savings (up to 70% cheaper per mile), lower servicing costs, and zero VED tax — and many EVs cost less per month than an equivalent petrol car.</p><div class="truth">✓ Average EV owner saves £1,200/year on fuel vs. petrol equivalent.</div></div>
-  </div>
-</div>
-<div class="section">
-  <div class="section-label">Browse by type</div>
-  <h2>Find the right EV for you.</h2>
-  <div class="categories">
-    <div class="cat"><div class="cat-icon">⚡</div><h3>Pure Electric</h3><p>Zero emissions, lowest running costs, best for regular commuters and city drivers.</p><div class="count">→ 320 models from £22,000</div></div>
-    <div class="cat"><div class="cat-icon">🔌</div><h3>Plug-in Hybrid</h3><p>Electric for short journeys, petrol for longer trips. Perfect if you're not ready to commit fully.</p><div class="count">→ 140 models from £28,000</div></div>
-    <div class="cat"><div class="cat-icon">🌿</div><h3>Mild Hybrid</h3><p>Improved efficiency with familiar refuelling. A smart first step toward electrification.</p><div class="count">→ 90 models from £18,000</div></div>
+    <div class="myth"><h3>🔋 "The range isn't enough"</h3><p>The average UK driver travels 20 miles a day. Most modern EVs offer 200–350 miles of real-world range — weeks of commuting on one charge.</p><div class="truth">✓ The Tesla Model Y offers 331 miles of real-world range.</div></div>
+    <div class="myth"><h3>⚡ "Charging is a nightmare"</h3><p>70% of EV owners charge at home overnight — like charging your phone. You start every morning with a full battery. No queues, no petrol stations.</p><div class="truth">✓ A home charger typically installs in around 3 hours.</div></div>
+    <div class="myth"><h3>💷 "EVs are too expensive"</h3><p>Factor in fuel savings, lower servicing costs, and zero VED road tax and many EVs cost less per month than an equivalent petrol car.</p><div class="truth">✓ Average EV owner saves £1,200/year on fuel vs. petrol equivalent.</div></div>
   </div>
 </div>
 <div class="section">
   <div class="section-label">Simple process</div>
   <h2>How Carwow works.</h2>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><h3>Tell us what you need</h3><p>Set your budget, range, and must-haves. Takes 2 minutes. No account needed.</p></div>
-    <div class="step"><div class="step-num">2</div><h3>Dealers compete for you</h3><p>Multiple UK dealers submit their best prices. You see them all, side by side.</p></div>
+    <div class="step"><div class="step-num">1</div><h3>Tell us what you need</h3><p>Set your budget, preferred range, and must-haves. Takes 2 minutes. No account needed.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Dealers compete for you</h3><p>Multiple UK dealers submit their best prices. You compare them all, side by side.</p></div>
     <div class="step"><div class="step-num">3</div><h3>Choose with confidence</h3><p>Pick your deal, arrange a test drive, and drive away. No haggling, ever.</p></div>
   </div>
 </div>
-<div class="final-cta">
+<div class="cta-section">
   <h2>Ready to go electric?</h2>
   <p>Compare 500+ EVs free. No commitment, no pressure.</p>
-  <p class="final-sub">Join 10 million UK drivers who found their perfect car on Carwow.</p>
-  <div class="cta-group">
-    <a href="#" class="btn-primary">Compare EVs Free — No Commitment →</a>
-    <a href="#" class="btn-secondary">Browse all electric cars</a>
-  </div>
+  <a href="#" class="btn">Compare EVs Free — No Commitment →</a>
 </div>
-<footer>
-  <div class="footer-inner">
-    <span class="logo">carwow</span>
-    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a><a href="#">About</a></div>
-    <span class="footer-copy">© 2026 Carwow Ltd. All rights reserved.</span>
-  </div>
-</footer>
+<footer>© 2026 Carwow Ltd · Privacy · Terms · Contact</footer>
 </body>
 </html>`;
+
 
 const LANDING_ITERATION_1: Iteration = {
   number: 1,
@@ -842,7 +712,6 @@ const LANDING_ITERATION_3: Iteration = {
   asset: {
     type: 'landing_page',
     html_path: '/landing/ev-hub-v3.html',
-    content: { html: LANDING_HTML_3 },
   },
   focus_group: {
     synthesis: "The final page is conversion-ready. The two-column hero with Trustpilot social proof and a customer quote in the right panel is the single biggest improvement — it instantly establishes credibility and emotional connection. The myth section now includes specific data points ('Tesla Model Y does 331 miles', 'saves £1,200/year') that transform assertions into evidence. The sticky navigation with persistent CTA keeps the action visible throughout. All five panellists said they would click the primary CTA on this version. The page is ready to deploy.",
@@ -956,7 +825,7 @@ export const DEMO_CAMPAIGNS: DemoCampaign[] = [
   },
   {
     id: 'demo-images-young',
-    name: 'EV Switch — Display Images — Younger Driver (18-30)',
+    name: 'EV Switch — Display Images — Initial Cost Is Lower With Carwow',
     asset_type: 'image',
     brief: 'Meta/Instagram display ad for Carwow\'s EV category. Target: first-time buyers and young professionals aged 18-30, driven by sustainability values, social status, and fuel cost savings. Highly active on Instagram and TikTok, respond to bold authentic visuals, peer-group imagery, and purposeful brand identity. Goal: drive traffic to Carwow EV comparison pages. Formats: 1:1 square, 4:5 portrait, 9:16 story.',
     created_at: '2026-02-27T09:00:00Z',
@@ -964,7 +833,7 @@ export const DEMO_CAMPAIGNS: DemoCampaign[] = [
   },
   {
     id: 'demo-images-peak',
-    name: 'EV Switch — Display Images — EV Adoption Peak (35-54)',
+    name: 'EV Switch — Display Images — The UK Now Has Over 86,000 Chargepoints',
     asset_type: 'image',
     brief: 'Meta/Instagram display ad for Carwow\'s EV category. Target: eco-conscious UK professionals 35–54 — the peak EV-switching demographic. Mix of family buyers, fleet managers, and established professionals with disposable income. Visual style: clean, modern, aspirational. Formats needed: 1:1 square, 4:5 portrait, 9:16 story.',
     created_at: '2026-02-27T09:00:00Z',
@@ -972,7 +841,7 @@ export const DEMO_CAMPAIGNS: DemoCampaign[] = [
   },
   {
     id: 'demo-images-older',
-    name: 'EV Switch — Display Images — Older Driver (60+)',
+    name: 'EV Switch — Display Images — EVs On Average Have A Range Of 230 Miles',
     asset_type: 'image',
     brief: 'Meta/Facebook display ad for Carwow\'s EV category. Target: drivers aged 60+, primarily Facebook users, motivated by running cost savings, environmental legacy, and reliability. Key concerns: range anxiety, home charging complexity, technology unfamiliarity, and upfront cost vs. fixed income. Goal: demystify electric car ownership for an older demographic. Formats: 1:1 square, 4:5 portrait, 9:16 story.',
     created_at: '2026-02-27T09:00:00Z',

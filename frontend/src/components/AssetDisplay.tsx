@@ -122,34 +122,44 @@ function VideoAsset({ asset }: { asset: AssetData }) {
 function LandingPageAsset({ asset }: { asset: AssetData }) {
   const content = asset.content as { html?: string } | undefined;
   const html = content?.html;
+  const filePath = asset.html_path;
 
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3 p-3 bg-white/5 rounded-xl">
         <div className="text-[#1CDCEB]">🌐</div>
-        <div className="flex-1 text-sm text-white/60">{asset.html_path || 'Landing page'}</div>
-        {html && (
-          <button
-            onClick={() => {
+        <div className="flex-1 text-sm text-white/60">{filePath || 'Landing page'}</div>
+        <button
+          onClick={() => {
+            if (filePath) {
+              window.open(filePath, '_blank');
+            } else if (html) {
               const w = window.open('', '_blank');
               if (w) { w.document.write(html); w.document.close(); }
-            }}
-            className="px-3 py-1.5 text-xs bg-[#1CDCEB] text-black font-semibold rounded-lg hover:bg-[#1CDCEB]/90 transition-colors"
-          >
-            Open ↗
-          </button>
-        )}
+            }
+          }}
+          className="px-3 py-1.5 text-xs bg-[#1CDCEB] text-black font-semibold rounded-lg hover:bg-[#1CDCEB]/90 transition-colors"
+        >
+          Open ↗
+        </button>
       </div>
-      {html && (
-        <div className="relative w-full rounded-xl overflow-hidden border border-white/10" style={{ height: '420px' }}>
+      <div className="relative w-full rounded-xl overflow-hidden border border-white/10" style={{ height: '420px' }}>
+        {html ? (
           <iframe
             srcDoc={html}
             className="w-full h-full"
             title="Landing page preview"
             sandbox="allow-scripts"
           />
-        </div>
-      )}
+        ) : filePath ? (
+          <iframe
+            src={filePath}
+            className="w-full h-full"
+            title="Landing page preview"
+            sandbox="allow-scripts allow-same-origin"
+          />
+        ) : null}
+      </div>
     </div>
   );
 }
