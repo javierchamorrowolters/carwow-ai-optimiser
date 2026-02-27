@@ -241,9 +241,9 @@ const IMAGE_ITERATION_1: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v1-square.jpg',
-      '/images/ev-display-v1-portrait.jpg',
-      '/images/ev-display-v1-story.jpg',
+      '/images/peak-v1-square.jpg',
+      '/images/peak-v1-portrait.jpg',
+      '/images/peak-v1-story.jpg',
     ],
   },
   focus_group: {
@@ -271,9 +271,9 @@ const IMAGE_ITERATION_2: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v2-square.jpg',
-      '/images/ev-display-v2-portrait.jpg',
-      '/images/ev-display-v2-story.jpg',
+      '/images/peak-v2-square.jpg',
+      '/images/peak-v2-portrait.jpg',
+      '/images/peak-v2-story.jpg',
     ],
   },
   focus_group: {
@@ -301,9 +301,9 @@ const IMAGE_ITERATION_3: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v3-square.jpg',
-      '/images/ev-display-v3-portrait.jpg',
-      '/images/ev-display-v3-story.jpg',
+      '/images/peak-v3-square.jpg',
+      '/images/peak-v3-portrait.jpg',
+      '/images/peak-v3-story.jpg',
     ],
   },
   focus_group: {
@@ -333,9 +333,9 @@ const YOUNG_IMAGE_ITERATION_1: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v1-square.jpg',
-      '/images/ev-display-v1-portrait.jpg',
-      '/images/ev-display-v1-story.jpg',
+      '/images/young-v1-square.jpg',
+      '/images/young-v1-portrait.jpg',
+      '/images/young-v1-story.jpg',
     ],
   },
   focus_group: {
@@ -363,9 +363,9 @@ const YOUNG_IMAGE_ITERATION_2: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v2-square.jpg',
-      '/images/ev-display-v2-portrait.jpg',
-      '/images/ev-display-v2-story.jpg',
+      '/images/young-v2-square.jpg',
+      '/images/young-v2-portrait.jpg',
+      '/images/young-v2-story.jpg',
     ],
   },
   focus_group: {
@@ -393,9 +393,9 @@ const YOUNG_IMAGE_ITERATION_3: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v3-square.jpg',
-      '/images/ev-display-v3-portrait.jpg',
-      '/images/ev-display-v3-story.jpg',
+      '/images/young-v3-square.jpg',
+      '/images/young-v3-portrait.jpg',
+      '/images/young-v3-story.jpg',
     ],
   },
   focus_group: {
@@ -425,9 +425,9 @@ const OLDER_IMAGE_ITERATION_1: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v1-square.jpg',
-      '/images/ev-display-v1-portrait.jpg',
-      '/images/ev-display-v1-story.jpg',
+      '/images/older-v1-square.jpg',
+      '/images/older-v1-portrait.jpg',
+      '/images/older-v1-story.jpg',
     ],
   },
   focus_group: {
@@ -455,9 +455,9 @@ const OLDER_IMAGE_ITERATION_2: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v2-square.jpg',
-      '/images/ev-display-v2-portrait.jpg',
-      '/images/ev-display-v2-story.jpg',
+      '/images/older-v2-square.jpg',
+      '/images/older-v2-portrait.jpg',
+      '/images/older-v2-story.jpg',
     ],
   },
   focus_group: {
@@ -485,9 +485,9 @@ const OLDER_IMAGE_ITERATION_3: Iteration = {
   asset: {
     type: 'image',
     urls: [
-      '/images/ev-display-v3-square.jpg',
-      '/images/ev-display-v3-portrait.jpg',
-      '/images/ev-display-v3-story.jpg',
+      '/images/older-v3-square.jpg',
+      '/images/older-v3-portrait.jpg',
+      '/images/older-v3-story.jpg',
     ],
   },
   focus_group: {
@@ -863,6 +863,86 @@ const LANDING_ITERATION_3: Iteration = {
   },
 };
 
+// ─── Video Campaign ───────────────────────────────────────────────────────────
+
+const VIDEO_ITERATION_1: Iteration = {
+  number: 1,
+  timestamp: '2026-02-27T09:00:00Z',
+  asset: {
+    type: 'video',
+    urls: ['/videos/ev-video-v1.mp4'],
+  },
+  focus_group: {
+    synthesis: "The first cut has significant pacing issues. There is no hook in the opening 3 seconds — the single moment where most users will scroll past without engaging. The Carwow brand doesn't appear until 22 seconds in, leaving the entire mid-section feeling unbranded and purposeless. The voice-over script is informative but lacks the emotional arc needed to drive action at the end. The closing CTA shows 'carwow.co.uk' for only 2 seconds — not enough time to register or act. The 9:16 vertical cut feels like an afterthought with text cropped at the edges. The EV imagery quality is genuinely strong and the music choice has aspirational potential — both are worth building on.",
+    summary_bullets: [
+      'No hook in the first 3 seconds — the majority of viewers will scroll past before the message begins.',
+      'Carwow brand appears at 22s — the entire mid-section is unbranded and will not be attributed.',
+      'Closing CTA shown for only 2 seconds — viewers need 4-5 seconds to register and act on a URL.',
+      '9:16 vertical cut has text cropped — needs a dedicated recompose, not a crop of the horizontal.',
+    ],
+    scores: { clarity: 4.8, emotional_impact: 3.6, brand_fit: 4.4, call_to_action: 3.8, overall: 4.1 },
+    full_transcript: [
+      { ...PANELLISTS.sarah,  score: 4, reaction: "I'd have scrolled past by second 3. Nothing in the opening earns my attention — it could be an ad for anything. The hook is missing entirely.", liked: "The car footage is genuinely beautiful — high production quality.", change: "Open with something that stops the scroll: a number, a question, a surprising visual. Hook me in second 1, not second 10." },
+      { ...PANELLISTS.marcus, score: 5, reaction: "The information is all there but it takes too long to arrive. I'm a busy professional — front-load the value proposition or I'm gone.", liked: "The closing shot is strong — open road, modern EV, aspirational light. Put that first.", change: "Cut 8 seconds from the middle section. Every second in a video ad must justify its existence." },
+      { ...PANELLISTS.priya,  score: 3, reaction: "There's no environmental identity here. I see cars and generic music. I don't feel like this is made by a brand that understands why people like me are switching.", liked: "The visual production quality — it's professional even if the structure doesn't work yet.", change: "Show one charging scene. Mention emissions once. Just once is enough for me to feel the eco angle." },
+      { ...PANELLISTS.james,  score: 5, reaction: "The Carwow brand appears far too late. If I don't know who is talking to me by second 5, I'm not listening. I nearly missed the brand entirely.", liked: "The factual voice-over — I appreciate being told clearly what Carwow actually does and how it works.", change: "Brand name in the first 5 seconds. By the time the CTA arrives I've forgotten the company name." },
+      { ...PANELLISTS.emma,   score: 4, reaction: "It ends before I feel anything. There's no emotional payoff — I was informed but not moved. I need to feel inspired to switch, not just told that I should.", liked: "The production values are solid — this doesn't look cheap or amateur.", change: "Add a family moment. One real-world scene that makes me think: that could be us." },
+    ],
+  },
+};
+
+const VIDEO_ITERATION_2: Iteration = {
+  number: 2,
+  timestamp: '2026-02-27T09:08:30Z',
+  asset: {
+    type: 'video',
+    urls: ['/videos/ev-video-v2.mp4'],
+  },
+  focus_group: {
+    synthesis: "The re-cut is markedly better. Opening with '70% off your fuel bill' as a 3-second hook creates immediate attention and frames the whole ad. The Carwow brand appears at 4 seconds and stays consistently present. The pacing is tighter — 9 seconds removed from the middle section. The 9:16 vertical is properly recomposed rather than cropped. The voice-over has more emotional energy. The primary remaining gap is the CTA sequence — it needs 3 more seconds, a visible URL, and ideally a QR code for TV and large-format placements. The new music edit feels intentional rather than generic.",
+    summary_bullets: [
+      'Hook ("70% off your fuel bill") successfully stops the scroll — strong open for all formats.',
+      'Brand visible from second 4 and consistently present — attribution problem from v1 is resolved.',
+      '9:16 recomposed correctly — text readable, key visual in frame throughout.',
+      'CTA still needs 3+ extra seconds and a URL/QR code — the click moment is still too rushed.',
+    ],
+    scores: { clarity: 6.8, emotional_impact: 6.4, brand_fit: 6.8, call_to_action: 6.2, overall: 6.6 },
+    full_transcript: [
+      { ...PANELLISTS.sarah,  score: 7, reaction: "'70%' made me stop scrolling immediately. Once you have my attention you hold it — the pacing is genuinely better. I watched it to the end.", liked: "The hook number and the early brand reveal. I know who's talking to me from second 4 this time.", change: "The CTA is still too fast. Give me 4-5 seconds with a URL or QR code. I need time to react." },
+      { ...PANELLISTS.marcus, score: 7, reaction: "Tighter, faster, clearer. This respects my time. I understand what Carwow offers within the first 8 seconds — that's exactly the right structure.", liked: "Data-led opening. A number first signals that the brand has substance, not just style.", change: "Add a 'Compare Free' subtitle over the CTA shot. No-commitment messaging helps hesitant buyers act." },
+      { ...PANELLISTS.priya,  score: 6, reaction: "The charging scene made me feel the eco angle without being preachy. I appreciate it's subtle but present — it works for someone like me.", liked: "The charging scene — simple, modern, understood immediately without spelling it out in words.", change: "One more environmental context shot — a wider skyline, cleaner air, something that speaks to legacy." },
+      { ...PANELLISTS.james,  score: 6, reaction: "Good — Carwow is visible from the start and stays visible. I'm no longer confused about who made this ad. That's the minimum requirement and it's finally met.", liked: "The structure: hook → brand → benefit → CTA. That's the logical order for a considered buyer.", change: "The voice-over speed is slightly fast in the final 8 seconds. Slow it down — give me time to process." },
+      { ...PANELLISTS.emma,   score: 7, reaction: "The school gate shot is perfect. One second, non-intrusive, but it tells me this EV works for real life with kids. That's the shot that made me feel this was for me.", liked: "The school gate — that's my life in one frame. That's the emotional moment that earns the click.", change: "Make the school gate shot 2 seconds longer. It's your strongest beat and you're rushing it." },
+    ],
+  },
+};
+
+const VIDEO_ITERATION_3: Iteration = {
+  number: 3,
+  timestamp: '2026-02-27T09:17:10Z',
+  asset: {
+    type: 'video',
+    urls: ['/videos/ev-video-v3.mp4'],
+  },
+  focus_group: {
+    synthesis: "The final cut is campaign-ready across all placements. The 3-second hook, consistent branding from second 4, tight pacing, emotional school-gate beat, and extended 5-second CTA with URL and QR code address every note from iterations 1 and 2. Both the 16:9 horizontal and 9:16 vertical cuts are properly composed — the vertical works natively on Reels, TikTok, and Stories. Across all five panellists, this is the first iteration that generated an unprompted emotional response. Production-ready for Meta, YouTube, and CTV placements.",
+    summary_bullets: [
+      'Final cut production-ready for Meta, YouTube, and CTV — all notes from iterations 1 and 2 resolved.',
+      '5-second CTA with URL and QR code gives viewers enough time to register and act.',
+      'School gate emotional beat extended to 2 seconds — the single highest-scoring moment across the panel.',
+      'Both 16:9 and 9:16 formats are properly composed — ready for all placement types.',
+    ],
+    scores: { clarity: 8.8, emotional_impact: 8.4, brand_fit: 8.6, call_to_action: 8.8, overall: 8.7 },
+    full_transcript: [
+      { ...PANELLISTS.sarah,  score: 9, reaction: "I would share this. That is the highest compliment I can give a 30-second ad. The hook, the pacing, the CTA — it all works. This will perform.", liked: "Everything — but especially the hook. It earns every second that follows.", change: "Nothing. Test it and watch the click-through rates. This is finished." },
+      { ...PANELLISTS.marcus, score: 9, reaction: "This is how you make a consumer video that works for a considered purchase. Clear, fast, branded, emotional, and CTA-driven. I'd book this without hesitation.", liked: "The data-led opening and the CTA structure. Logic and emotion in exactly the right sequence.", change: "Run the QR code dwell-time test to optimise. Otherwise ship immediately." },
+      { ...PANELLISTS.priya,  score: 8, reaction: "The wider sustainability shot closes the loop perfectly. I feel like this brand understands why people like me are switching — not just that we're switching.", liked: "The progression: hook → product → planet → people → CTA. A complete story in 30 seconds.", change: "Perfect for my segment. Maybe test a version with a slightly more prominent EV charge badge." },
+      { ...PANELLISTS.james,  score: 8, reaction: "I watched it three times. That is a first for me with an ad. The slower final 8 seconds lets me read the URL and think. The QR code is a thoughtful addition.", liked: "The pace is finally right. It gives me time to process rather than chasing the edit.", change: "Congratulations. This is the best EV ad I have seen. Send it." },
+      { ...PANELLISTS.emma,   score: 9, reaction: "The school gate is 2 seconds longer and it makes all the difference. That one shot is worth more than any statistic in this film. I feel completely seen.", liked: "The emotional intelligence of this final cut. It does not shout. It shows.", change: "This is production-ready. I am genuinely moved by it, which is rare for an ad." },
+    ],
+  },
+};
+
 // ─── Campaign Definitions ─────────────────────────────────────────────────────
 
 export const DEMO_CAMPAIGNS: DemoCampaign[] = [
@@ -906,6 +986,14 @@ export const DEMO_CAMPAIGNS: DemoCampaign[] = [
     created_at: '2026-02-27T09:00:00Z',
     iterations: [LANDING_ITERATION_1, LANDING_ITERATION_2, LANDING_ITERATION_3],
   },
+  {
+    id: 'demo-video',
+    name: 'EV Switch — Video',
+    asset_type: 'video',
+    brief: 'A 30-second video ad for Meta, YouTube, and CTV placements. Target: UK drivers aged 28–50, EV-curious but hesitant due to range anxiety and cost concerns. Goal: drive clicks to Carwow\'s EV comparison pages. Format: 16:9 horizontal (YouTube/CTV) + 9:16 vertical (Instagram Reels/TikTok). Tone: inspiring, modern, data-led hook, clear CTA. USP: compare hundreds of EVs, real dealer prices, no haggling.',
+    created_at: '2026-02-27T09:00:00Z',
+    iterations: [VIDEO_ITERATION_1, VIDEO_ITERATION_2, VIDEO_ITERATION_3],
+  },
 ];
 
 export const getDemoCampaign = (id: string) => DEMO_CAMPAIGNS.find(c => c.id === id);
@@ -915,5 +1003,5 @@ export const DEMO_REDIRECT: Record<AssetType, string> = {
   rsa_copy: 'demo-rsa',
   image: 'demo-images-peak',
   landing_page: 'demo-landing',
-  video: 'demo-rsa', // fallback until video assets are provided
+  video: 'demo-video',
 };

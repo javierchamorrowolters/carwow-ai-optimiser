@@ -42,7 +42,7 @@ export default function HomePage() {
               ) : (
                 <div className="space-y-2 mt-4">
                   {campaigns.map(c => (
-                    <Link key={c.id} href={`/campaign/${c.id}`} className="flex items-center justify-between p-3 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
+                    <Link key={c.id} href={`/campaign/new?type=${c.asset_type}&demo=${c.id}`} className="flex items-center justify-between p-3 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
                       <div>
                         <div className="font-medium text-sm">{c.name}</div>
                         <div className="text-white/40 text-xs mt-0.5">

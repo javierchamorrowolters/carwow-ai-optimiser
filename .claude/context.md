@@ -17,11 +17,15 @@
 - [x] 9 real EV images downloaded from Unsplash CDN (public/images/ev-display-v*-*.jpg)
 - [ ] Separate images per age segment (all 3 campaigns share same 9 images for now)
 - [ ] Video campaign assets (when user provides)
-- [ ] Git init / GitHub push / Vercel deployment
+- [x] Git init / GitHub push / Vercel deployment — COMPLETE
+  - GitHub: https://github.com/javierchamorrowolters/carwow-ai-optimiser
+  - Live URL: https://carwow-ai-optimiser.vercel.app (permanent alias)
+  - Auto-deploy: every `git push` to main triggers GitHub Actions → Vercel production
 
 ## Campaign IDs
 | ID                  | Name                                              | Redirect from "New" |
-|---------------------|---------------------------------------------------|---------------------|
+|---------------------|---------------
+------------------------------------|---------------------|
 | demo-rsa            | EV Switch — RSA Copy                              | ✓ (rsa_copy type)   |
 | demo-images-young   | EV Switch — Display Images — Younger Driver       |                     |
 | demo-images-peak    | EV Switch — Display Images — EV Adoption Peak     | ✓ (image type)      |
