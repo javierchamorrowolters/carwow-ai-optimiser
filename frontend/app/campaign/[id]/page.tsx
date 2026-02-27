@@ -54,7 +54,7 @@ export default function CampaignPage({ params }: { params: Promise<{ id: string 
     setIterating(true);
     setStepIndex(0);
 
-    const totalMs = 7000;
+    const totalMs = 5250;
     const stepMs = totalMs / ITERATE_STEPS.length;
 
     for (let i = 0; i < ITERATE_STEPS.length; i++) {

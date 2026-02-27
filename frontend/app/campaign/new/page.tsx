@@ -41,7 +41,7 @@ function NewCampaignForm() {
     setStepIndex(0);
 
     // Cycle through loading steps, then redirect to demo campaign
-    const totalMs = 8000;
+    const totalMs = 6000;
     const stepMs = totalMs / LOADING_STEPS.length;
 
     for (let i = 0; i < LOADING_STEPS.length; i++) {
